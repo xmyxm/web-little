@@ -30,28 +30,37 @@ module.exports = {
         }
     },
     module: {
-        rules: [{
-            test: /\.(es6|jsx|js)$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    babelrc: true,// 默认配置使用 .babelrc 文件
-                    cacheDirectory: true // 指定的目录将用来缓存 loader 的执行结果。之后的 webpack 构建，将会尝试读取缓存
-                }
-            }
-        },
-        {
-            test: /\.woff|ttf|woff2|eot$/,
-            use: [
-                {
-                    loader: 'url-loader',
+        rules: [
+            {
+                test: /\.(es6|jsx|js)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
                     options: {
-                        limit: 1000
+                        babelrc: true,// 默认配置使用 .babelrc 文件
+                        cacheDirectory: true // 指定的目录将用来缓存 loader 的执行结果。之后的 webpack 构建，将会尝试读取缓存
                     }
                 }
-            ]
-        }]
+            },
+            {
+                test: /\.tsx?$/,
+                loader: "ts-loader",
+                options: {
+                    // disable type checker - we will use it in fork plugin
+                    transpileOnly: true
+                }
+            },
+            {
+                test: /\.woff|ttf|woff2|eot$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 1000
+                        }
+                    }
+                ]
+            }]
     },
     plugins: [
         new webpack.BannerPlugin('点评平台研发中心-基础脚手架测试'),
