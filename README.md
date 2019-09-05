@@ -1,2 +1,4 @@
 # web-little
-webpack + babel + react + eslint + typescript 脚手架
+webpack + babel + react + jest + eslint 脚手架
+
+未完，开发中
