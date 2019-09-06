@@ -50,6 +50,13 @@ module.exports = {
                     transpileOnly: true
                 }
             },
+            { //html模板加载器，可以处理引用的静态资源，默认配置参数attrs=img:src，处理图片的src引用的资源
+                test: /\.html$/,
+                loader: "html-loader",
+                options: {
+                    attrs: ['img:src', 'link:href']
+                }
+            },
             {
                 test: /\.woff|ttf|woff2|eot$/,
                 use: [
@@ -77,3 +84,4 @@ module.exports = {
         })
     ]
 }
+

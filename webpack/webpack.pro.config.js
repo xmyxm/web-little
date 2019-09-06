@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');//webpack插件�
 const config = require('./webpack.base.config.js');
 
 config.mode = "production"
+config.devtool = "cheap-module-source-map"
 config.module.rules.push(
     {
         test: /\.less$/,
@@ -17,7 +18,7 @@ config.module.rules.push(
         ]
     },
     {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif|svg|ico)$/i,
         use: [
             {
                 // 既然base.config中配置了雪碧图，这里就无需使用 url-loader 的base64能力，直接使用 file-loader 即可，

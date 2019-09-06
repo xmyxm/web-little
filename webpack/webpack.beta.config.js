@@ -3,6 +3,7 @@ const path = require('path');
 const packageFilePath = path.join(__dirname, '../dist')
 
 config.mode = "development"
+config.devtool = "cheap-module-eval-source-map"
 config.module.rules.push(
     {
         test: /\.less$/,
@@ -14,7 +15,7 @@ config.module.rules.push(
         ]
     },
     {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif|svg|ico)$/i,
         use: [
             {
                 loader: 'url-loader',
