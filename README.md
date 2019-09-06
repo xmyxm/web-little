@@ -3,6 +3,15 @@ webpack + babel + react + jest + eslint 脚手架
 
 未完，开发中
 
+### 脚手架具备能力
+```text
+1. 支持本地开发调试和线上打包配置
+2. 支持favicon
+3. 自动合并雪碧图icons
+4. 支持线上打包图片压缩
+```
+
+
 ### 笔记
 ```text
 1. TypeScript 可以像 Babel 那样输出 ES5 了, 使用 ts-loader 即可
@@ -18,6 +27,8 @@ webpack + babel + react + jest + eslint 脚手架
 
 
 5. webpack 4 里面使用了 terser-webpack-plugin 插件替代了之前一直使用的 uglifyjs-webpack-plugin 作为它的内置插件，以 4.39.3 这个版本为例，可以看到它的 package.json 文件的依赖包括了terser-webpack-plugin，webpack 4默认支持 ES6 代码的压缩，若使用UglifyJs 压缩ES6代码会抛出错误。经查阅提交历史发现webpack4在 4.26.0 的版本中完成了对uglifyjs-webpack-plugin的替换
+
+6. 
 ```
 
 
