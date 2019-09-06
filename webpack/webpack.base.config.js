@@ -5,7 +5,7 @@ const packageFilePath = path.join(__dirname, '../dist');
 
 module.exports = {
     entry: {
-        index: ['./src/page/index.js']
+        index: ['./src/page/index.tsx']
     },
     output: {
         path: packageFilePath,
@@ -32,7 +32,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(es6|jsx|js)$/,
+                test: /\.(es6|jsx|js|ts|tsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
@@ -40,14 +40,6 @@ module.exports = {
                         babelrc: true,// 默认配置使用 .babelrc 文件
                         cacheDirectory: true // 指定的目录将用来缓存 loader 的执行结果。之后的 webpack 构建，将会尝试读取缓存
                     }
-                }
-            },
-            {
-                test: /\.tsx?$/,
-                loader: "ts-loader",
-                options: {
-                    // disable type checker - we will use it in fork plugin
-                    transpileOnly: true
                 }
             },
             { //html模板加载器，可以处理引用的静态资源，默认配置参数attrs=img:src，处理图片的src引用的资源

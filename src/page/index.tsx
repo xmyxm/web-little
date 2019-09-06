@@ -5,13 +5,18 @@ import "../style/index.less";
 
 export default class Index extends Component {
 
+    constructor(props) {
+        super(props)
+    }
+    
     render() {
+        const title:string = "我是一个基于webpack + babel + react + typeScript + eslint脚手架项目"
         return (
             <React.Fragment>
                 <Header title="index"></Header>
                 <div className="index-page">
                     <div className="icon-max"></div>
-                    <div className="describe">我是一个基于webpack + babel + react + jest + eslint脚手架项目</div>
+                    <div className="describe">{title}</div>
                     <div className="info">
                         使用方案介绍：
                         <p>支持图片统一压缩和icon的雪碧图方案</p>

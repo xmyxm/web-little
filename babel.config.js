@@ -14,7 +14,8 @@ module.exports = function (api) {
                 "corejs": 3 // 针对Babel > 7.4.0, 官方不再推荐使用@babel/polyfill，请选择core-js，根据安装core-js版本在corejs选项填写数字2或3，其实polyfill本身就是stable版本的core-js和regenerator-runtime的合集，所以在针对Babel >= 7.4.0 的情况，我们需要安装 core-js 替代 babel-polyfill,而 regenerator-runtime 会在我们安装 @babel/runtime 时自动安装，所以不必单独安装了
             }
         ],
-        "@babel/preset-react"
+        "@babel/preset-react",
+        "@babel/preset-typescript"
     ]
     const plugins = [
         [
@@ -31,10 +32,8 @@ module.exports = function (api) {
         ]
     ]
 
-
     return {
         presets,
         plugins
     };
 }
-
