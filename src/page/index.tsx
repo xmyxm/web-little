@@ -10,7 +10,7 @@ export default class Index extends Component {
     }
     
     render() {
-        const title:string = "我是一个基于webpack + babel + react + typeScript + eslint脚手架项目"
+        const title:string = "我是一个基于webpack + babel + react + TypeScript + eslint脚手架项目"
         return (
             <React.Fragment>
                 <Header title="index"></Header>
