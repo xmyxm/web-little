@@ -2,27 +2,20 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "target": "es5",
-        "jsx": "react",
-        "noImplicitAny": true,
+        "strictNullChecks": true,
         "moduleResolution": "node",
-        "sourceMap": true,
-        "rootDir": "./src",
-        "outDir": "dist",
-        "baseUrl": ".",
-        "paths": {
-            "*": [
-                "node_modules/*",
-                "src/types/*"
-            ]
-        }
+        "jsx": "preserve",
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "allowSyntheticDefaultImports":true,
+        "target": "ESNext",
+        "noImplicitAny": true
     },
     "include": [
-        "src/*"
+        "src/**/*"
     ],
     "exclude": [
         "node_modules"
-      ]
+    ],
+    "compileOnSave": true
 }

@@ -7,12 +7,16 @@ export default class Header extends Component {
     }
 
     next = () => {
-        const { nextPage } = this.props
-        if (nextPage) location.href = nextPage
+        // const { nextPage } = this.props
+        // if (nextPage) location.href = nextPage
     }
 
     render() {
-        const { nextPage, hideHeight, title = "" } = this.props
+        // const { nextPage, hideHeight, title = "" } = this.props
+        const nextPage: boolean = false;
+        const hideHeight: boolean = true;
+        const title: string = ''
+
         return (
             <React.Fragment>
                 <header className="header">

@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import ReactDOM from 'react-dom';
-import Header from "../component/header/index"
+import * as React from "react";
+import * as ReactDOM from 'react-dom';
+import Header from "../component/header/index.tsx";
 import "../style/index.less";
 
-export default class Index extends Component {
+export default class Index extends React.Component {
 
     constructor(props) {
         super(props)

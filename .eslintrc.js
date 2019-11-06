@@ -25,9 +25,8 @@ module.exports = {
     // 开启规则和发生错误时报告的等级
     rules: {
         "no-console": "off",
-        "@typescript-eslint/indent": ["error", 2],
+        "@typescript-eslint/no-var-requires": "off",
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+        "@typescript-eslint/indent": ["error", 2, {'baseIndent': 1}],
     }
 }
-
-
-
