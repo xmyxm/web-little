@@ -5,7 +5,7 @@ module.exports = {
     // 脚本运行环境
     env: {
         "browser": true,
-        "node": true,
+        "node": true, // webpack所以需要node一些环境变量
         "es6": true
     },
     // 额外的全局变量

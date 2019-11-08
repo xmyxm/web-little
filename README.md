@@ -1,6 +1,11 @@
 # web-little
 webpack + babel + react + jest + eslint 脚手架
 
+[eslint配置说明文档](https://eslint.bootcss.com/docs/user-guide/configuring/)
+
+[TypeScript配置说明文档](https://www.tslang.cn/docs/home.html)
+
+
 未完，开发中
 
 ### 脚手架具备能力
@@ -38,6 +43,7 @@ webpack + babel + react + jest + eslint 脚手架
 
 ```
 
+```javascript
 {
     test: /\.tsx?$/,
     loader: 'babel-loader',
@@ -58,6 +64,8 @@ webpack + babel + react + jest + eslint 脚手架
     use: ["babel-loader", "ts-loader"],
     exclude: [path.resolve(__dirname, "node_modules")]
 }
+```
+
 
 
 

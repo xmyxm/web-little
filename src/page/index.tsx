@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from 'react-dom';
-import Header from "../component/header/index.tsx";
+import Header from "../component/header/index";
 import "../style/index.less";
 
 export default class Index extends React.Component {
