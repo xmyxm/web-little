@@ -11,6 +11,7 @@ config.plugins.push(new webpack.NamedModulesPlugin());
 config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
 const compiler = webpack(config);
+// console.log('compiler.hooks.someHook ::::::::::::', compiler.hooks)
 const server = new WebpackDevServer(compiler, config.devServer);
 
 server.listen(port, host, (err)=>{
@@ -19,3 +20,4 @@ server.listen(port, host, (err)=>{
 	}
 	open('http://' + host + ':' + port + '/index.html');
 });
+

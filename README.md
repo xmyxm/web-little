@@ -16,6 +16,10 @@ webpack + babel + react + jest + eslint 脚手架
 4. 支持线上打包图片压缩
 ```
 
+### 配置
+```shell
+    npm config set registry https://registry.npm.taobao.org
+```
 
 ### 笔记
 ```text

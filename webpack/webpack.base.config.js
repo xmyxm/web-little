@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const BuildDonePlugin = require('./plugins/builddone')
 const packageFilePath = path.join(__dirname, '../dist');
 
 module.exports = {
@@ -64,6 +64,7 @@ module.exports = {
     },
   },
   plugins: [
+    new BuildDonePlugin(),
     new webpack.BannerPlugin('点评平台研发中心-基础脚手架测试'),
     new HtmlWebpackPlugin({
       template: './src/html/index.html',
