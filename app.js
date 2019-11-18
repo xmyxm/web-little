@@ -9,11 +9,8 @@ const host = config.devServer.host;
 config.plugins.push(new webpack.NamedModulesPlugin());
 //开发环境热更新配置
 config.plugins.push(new webpack.HotModuleReplacementPlugin());
-
 const compiler = webpack(config);
-// console.log('compiler.hooks.someHook ::::::::::::', compiler.hooks)
 const server = new WebpackDevServer(compiler, config.devServer);
-
 server.listen(port, host, (err)=>{
 	if(err){
 		console.log('启动出错：' + err);

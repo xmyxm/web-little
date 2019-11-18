@@ -1,3 +1,4 @@
+const print = require('../../lib/print-log')
 class BuildDonePlugin {
   constructor(options) {
     this.options = { ...options};
@@ -5,7 +6,7 @@ class BuildDonePlugin {
 
   apply(compiler) {
     compiler.hooks.done.tapAsync('CSSTreeShakingPlugin', (compilation, callback) => {
-      console.log('编译完成：', arguments);
+      print.info('---- 编译完成 ----');
     });
   }
 }

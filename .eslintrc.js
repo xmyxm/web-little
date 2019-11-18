@@ -42,7 +42,10 @@ module.exports = {
     // 开启规则和发生错误时报告的等级
     rules: {
         "no-console": "off",
+        "object-curly-newline": "off",
         "import/no-unresolved": "off",
+        "no-multi-assign": "off", // 链接变量的赋值可能会导致意外的结果并难以阅读 https://cloud.tencent.com/developer/section/1135717
+        "@typescript-eslint/ban-ts-ignore": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-var-requires": "off",
         "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
