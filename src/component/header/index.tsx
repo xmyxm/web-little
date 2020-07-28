@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import './index.less';
 
 export interface Props {
-  title: string;
-  next: string;
+  title?: string;
+  next?: string;
 }
 
-export default class Header extends Component {
+export default class Header extends Component<Props, {}> {
   back = (): void => {
     history.back();
   };
 
   next = (): void => {
     const { next } = this.props;
-    if (next) location.href = nextPage;
+    if (next) location.href = next;
   };
 
   render(): JSX.Element {
@@ -29,7 +29,7 @@ export default class Header extends Component {
             className={next ? 'next-page' : 'next'}
           ></div>
         </header>
-        <div className="headerbox"></div>}
+        <div className="headerbox"></div>
       </React.Fragment>
     );
   }

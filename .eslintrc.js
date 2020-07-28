@@ -41,6 +41,7 @@ module.exports = {
     ],
     // 开启规则和发生错误时报告的等级
     rules: {
+        "no-restricted-globals": "off",
         "no-console": "off",
         "object-curly-newline": "off",
         "import/no-unresolved": "off",

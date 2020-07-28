@@ -1,5 +1,9 @@
 {
     "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@component/*": ["./src/component/*"]
+        },
         /* 基本选项 */
         "target": "esnext", // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
         "module": "CommonJS", // 指定生成哪个模块系统代码： "None"， "CommonJS"， "AMD"， "System"， "UMD"， "ES6"或 "ES2015"。
@@ -36,8 +40,7 @@
 
         /* 其他选项 */
         "experimentalDecorators": true,        // 启用装饰器
-        "emitDecoratorMetadata": true          // 为装饰器提供元数据的支持
-
+        "emitDecoratorMetadata": true,         // 为装饰器提供元数据的支持
     },
     "include": [ // 如果"files"和"include"都没有被指定，编译器默认包含当前目录和子目录下所有的TypeScript文件（.ts, .d.ts 和 .tsx），排除在"exclude"里指定的文件
         "src/**/*"

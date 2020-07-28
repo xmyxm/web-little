@@ -57,6 +57,7 @@ module.exports = {
       }],
   },
   resolve: {
+    extensions: ['.ts', '.jsx', '.tsx', '.js'],
     // 别名设置,主要是为了配和webpack.ProvidePlugin设置全局插件;
     alias: {
       // 绝对路径;特别注意这里定义的路径和依赖的包名不能重名
@@ -64,8 +65,8 @@ module.exports = {
     },
   },
   plugins: [
-    new BuildDonePlugin(),
-    new webpack.BannerPlugin('点评平台研发中心-基础脚手架测试'),
+    // new BuildDonePlugin(),
+    new webpack.BannerPlugin('@web-little'),
     new HtmlWebpackPlugin({
       template: './src/html/index.html',
       filename: 'index.html', // 可以使用hash命名

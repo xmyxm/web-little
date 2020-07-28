@@ -5,8 +5,8 @@ class BuildDonePlugin {
   }
 
   apply(compiler) {
-    compiler.hooks.done.tapAsync('CSSTreeShakingPlugin', (compilation, callback) => {
-      print.info('---- 编译完成 ----');
+    compiler.hooks.done.tapAsync('BuildDonePlugin', (compilation, callback) => {
+      print.info('---- 构建完成 ----');
     });
   }
 }
