@@ -5,7 +5,7 @@ import * as ReactDOM from 'react-dom';
 import Header from '@component/header/index';
 import '../style/index.less';
 
-export default class Index extends React.Component {
+class Index extends React.Component {
   render = (): JSX.Element => {
     const title = '我是一个基于webpack + babel + react + TypeScript + eslint脚手架项目';
     return (
