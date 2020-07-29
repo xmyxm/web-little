@@ -3,33 +3,23 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import Header from '@component/header/index';
+import bookmarkList from '../util/bookmark';
 import '../style/index.less';
 
 class Index extends React.Component {
-  render = (): JSX.Element => {
-    const title = '我是一个基于webpack + babel + react + TypeScript + eslint脚手架项目';
-    return (
-      <React.Fragment>
-        <Header title="index"></Header>
-        <div className="index-page">
-          <div className="icon-max"></div>
-          <div className="describe">{title}</div>
-          <div className="info">
-                        使用方案介绍：
-            <p>支持图片统一压缩和icon的雪碧图方案</p>
-            <p>支持ES6转ES5配置</p>
-            <p>支持ES6转ES5配置</p>
-          </div>
-          <div className="info">
-                        友情提示：
-            <p>
-                            因使用了图片压缩工具image-webpack-loader，导致安装依赖稍慢，在意安装速度的可以移除此插件及其引用
-            </p>
-          </div>
-        </div>
-      </React.Fragment>
-    );
-  }
+  render = (): JSX.Element => <React.Fragment>
+    <Header title="书签"></Header>
+    <div className="index-page">
+      {
+        bookmarkList.map((categoryData) => <div key={categoryData.name} className="category-box">
+          <div className="category_name">{categoryData.name}</div>
+          {
+            categoryData.list.map((item) => <a className="bookmark-name" key={item.name} href={item.link}><i className="bookmark-icon"></i> {item.name}</a>)
+          }
+        </div>)
+      }
+    </div>
+  </React.Fragment>
 }
 
 ReactDOM.render(<Index></Index>, document.querySelector('#main'));
