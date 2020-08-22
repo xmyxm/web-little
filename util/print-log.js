@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 module.exports = {
   info: (info) => {
     console.log('\x1B[32m%s\x1B[39m', info);

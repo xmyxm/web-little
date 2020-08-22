@@ -46,7 +46,8 @@
         "src/**/*"
     ],
     "exclude": [ //  "files"指定一个包含相对或绝对文件路径的列表。 "include"和"exclude"属性指定一个文件glob匹配模式列表
-        "node_modules"
+        "node_modules",
+        "util"
     ],
     "compileOnSave": true // 让IDE在保存文件的时候根据tsconfig.json重新生成文件
 }

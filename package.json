@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
+    "dev": "node dev.js",
     "build": "webpack --config ./webpack/webpack.pro.config.js",
     "lint": "eslint src --fix --ext .ts,.tsx "
   },
@@ -72,6 +73,9 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "koa": "^2.13.0",
+    "koa-router": "^9.4.0",
+    "koa-static": "^5.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.8.6"
   }

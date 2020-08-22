@@ -1,4 +1,4 @@
-const print = require('../../lib/print-log')
+const print = require('../../util/print-log')
 class BuildDonePlugin {
   constructor(options) {
     this.options = { ...options};

@@ -1,27 +1,31 @@
-const WebpackDevServer = require('webpack-dev-server');
-const portIsOccupied = require('./util/portIsOccupied');
-const webpack = require('webpack');
-const open = require('open');
-const config = require('./webpack/webpack.beta.config');
-const c = require('child_process');
-const port =  config.devServer.port;
-const host = config.devServer.host;
+const fs = require('fs');
+const Koa = require('koa');
+const serve = require('koa-static');
+const Router = require('koa-router');
+const app = new Koa();
+const router = new Router();
+ 
+// or use absolute paths
+app.use(serve(__dirname + '/dist/', {
+	maxage: 3000,
+}));
+ 
+router.get('api', '/api/blog/:name', (ctx, next) => {
+  const filePath = `src/blog/${ctx.params.name}.md`;
+  let markdownText = '';
+  if (fs.existsSync(filePath)) {
+    console.log('文件读取');
+    markdownText = fs.readFileSync(filePath,'utf-8');
+  } else {
+    console.log('文件不存在');
+  }
+  ctx.body = markdownText;
+});
 
-// 在热加载时直接返回更新文件名，而不是文件的id。
-config.plugins.push(new webpack.NamedModulesPlugin());
-//开发环境热更新配置
-config.plugins.push(new webpack.HotModuleReplacementPlugin());
-const compiler = webpack(config);
-const server = new WebpackDevServer(compiler, config.devServer);
+router.get('/404', ctx => {
+  ctx.body = '<h1>404...</h1>'
+});
 
-portIsOccupied(port).then(newPort => {
-		server.listen(newPort, host, (err)=>{
-			if(err){
-				console.log('启动出错：' + err);
-			}
-			// c.exec(`start http://localhost:${newPort}`)
-			open('http://' + host + ':' + port + '/index.html');
-		});
-})
-	
+app.use(router.routes())  // 启动路由
 
+app.listen(3000);
