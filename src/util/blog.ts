@@ -2,7 +2,8 @@ const bookmarkList = [
   {
     name: '笔记',
     list: [
-      { name: 'git教程', link: 'https://github.com/' },
+      { name: 'git命令笔记', link: 'git_book' },
+      { name: 'webview 禁止长按保存图片&禁止文本选择', link: 'webview_touch' },
     ],
   },
   {
@@ -14,7 +15,7 @@ const bookmarkList = [
   {
     name: '设计',
     list: [
-      { name: 'isux', link: 'https://isux.tencent.com/' },
+
     ],
   },
 ];
