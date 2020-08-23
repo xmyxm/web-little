@@ -8,6 +8,7 @@ module.exports = {
   entry: {
     bookmark: ['./src/page/bookmark.tsx'],
     blog: ['./src/page/blog.tsx'],
+    article: ['./src/page/article.tsx'],
   },
   output: {
     path: packageFilePath,
@@ -69,7 +70,7 @@ module.exports = {
     // new BuildDonePlugin(),
     new webpack.BannerPlugin('@web-little'),
     new HtmlWebpackPlugin({
-      template: './src/html/bookmark.html',
+      template: './src/html/index.html',
       filename: 'bookmark.html', // 可以使用hash命名
       title: 'bookmark',
       inject: 'body', // 脚本包含到body 也可以写到head里面
@@ -80,11 +81,22 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
-      template: './src/html/blog.html',
+      template: './src/html/index.html',
       filename: 'blog.html', // 可以使用hash命名
       title: 'blog',
       inject: 'body', // 脚本包含到body 也可以写到head里面
       chunks: ['manifest', 'commons', 'blog'], // 指定当前模板需要打入哪些js模块
+      minify: { // 启用代码代码压缩
+        removeComments: false, // 移除注释
+        collapseWhitespace: false, // 移除空格
+      },
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/html/index.html',
+      filename: 'article.html', // 可以使用hash命名
+      title: 'article',
+      inject: 'body', // 脚本包含到body 也可以写到head里面
+      chunks: ['manifest', 'commons', 'article'], // 指定当前模板需要打入哪些js模块
       minify: { // 启用代码代码压缩
         removeComments: false, // 移除注释
         collapseWhitespace: false, // 移除空格
