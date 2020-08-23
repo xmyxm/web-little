@@ -1,2 +1,2 @@
 /** @format */
-import '../style/index.less';
+import '../style/article.less';
