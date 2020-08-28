@@ -30,3 +30,4 @@ function hide(): void {
 document.body.addEventListener('click', show);
 minBox.addEventListener('click', hide);
 ```
+体验地址：[Demo链接](https://github.com/xmyxm/Javascript_test/blob/master/滚动穿透最优实现方案.html)
