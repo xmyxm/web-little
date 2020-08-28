@@ -7,7 +7,7 @@ const bookmarkList = [
       { name: 'git多账号配置方案', link: 'git_account' },
       { name: 'mac修改hosts命令', link: 'mac_hosts' },
       { name: '滚动穿透解决方案', link: 'scroll_book' },
-      { name: 'webview 禁止长按保存图片&禁止文本选择', link: 'webview_touch' },
+      { name: 'webview禁止长按保存图片&禁止文本选择', link: 'webview_touch' },
     ],
   },
   {
