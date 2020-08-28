@@ -10,6 +10,9 @@ class Index extends React.Component {
   render = (): JSX.Element => <React.Fragment>
     <Header title="书签"></Header>
     <div className="index-page">
+      <div className="blog-box">
+
+      </div>
       {
         bookmarkList.map((categoryData) => <div key={categoryData.name} className="category-box">
           <div className="category_name">{categoryData.name}</div>
