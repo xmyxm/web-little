@@ -5,6 +5,7 @@ import * as ReactDOM from 'react-dom';
 import Header from '@component/header';
 import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
+import { getUrlParam } from '../util/util';
 import 'github-markdown-css';
 import '../style/article.less';
 
@@ -18,7 +19,7 @@ class Index extends React.Component<BlogProps> {
   }
 
   componentDidMount = async (): Promise<void> => {
-    const name = 'git_book';
+    const name = getUrlParam('name');
     const response: { data: string } = await axios.get(`/api/blog/${name}`);
     this.setState({ contentText: response.data });
     console.log(response.data);
