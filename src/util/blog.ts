@@ -3,7 +3,9 @@ const bookmarkList = [
     name: '笔记',
     list: [
       { name: 'git命令笔记', link: 'git_book' },
+      { name: 'linux常用指令', link: 'linux_book' },
       { name: 'git多账号配置方案', link: 'git_account' },
+      { name: 'mac修改hosts命令', link: 'mac_hosts' },
       { name: 'webview 禁止长按保存图片&禁止文本选择', link: 'webview_touch' },
     ],
   },
