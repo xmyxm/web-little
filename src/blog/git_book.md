@@ -27,7 +27,7 @@
 ```
 
 ### 二、git常用命令
-#### git 应急小救星，我们经常在本地开发一半需要临时切换到其它分支修复bug，此时又不想提交本地未完成的开发，那我们可以像如下这样：
+1.git 应急小救星，我们经常在本地开发一半需要临时切换到其它分支修复bug，此时又不想提交本地未完成的开发，那我们可以像如下这样：
 ```
 1. 已修改和已暂存状态的变更保存在stash栈上：git stash
 2. 查看stash栈：git stash list
@@ -36,15 +36,15 @@
 5. 全部出栈：git stash pop
 ```
 
-#### 有时候我们commit 完了才发现漏掉了几个文件没有加，或者提交信息写错了。想要撤消刚才的提交操作，可以使用 --amend 选项重新提交
+2.有时候我们commit 完了才发现漏掉了几个文件没有加，或者提交信息写错了。想要撤消刚才的提交操作，可以使用 --amend 选项重新提交
 ```
 git commit -m '第一次commit到本地'
 git add app.js
 git commit --amend
 ```
-#### 第一次commit 后修改文件补充提交就可使用如上命令。此时只会有一次commit记录，其实这里使用 --amend 命令后commit到本地只有一条记录和最新的commit备注。
+3.第一次commit 后修改文件补充提交就可使用如上命令。此时只会有一次commit记录，其实这里使用 --amend 命令后commit到本地只有一条记录和最新的commit备注。
 
-#### git revert通过创建一个新的commit来取消之前的某个commit。因为它不会重写commit的提交历史，所以是回滚代码的安全方式。举个例子，下面的命令的命令会找到倒数第二个commit，然后创建一个新的commit来回滚那次提交的改动.
+4.git revert通过创建一个新的commit来取消之前的某个commit。因为它不会重写commit的提交历史，所以是回滚代码的安全方式。举个例子，下面的命令的命令会找到倒数第二个commit，然后创建一个新的commit来回滚那次提交的改动.
 
 ### 三、查看config
 ```
@@ -67,7 +67,7 @@ git commit --amend
 回退到前3次提交之前，以此类推，回退到n次提交之前：git reset --hard HEAD~3
 回退到任意一次commit提交历史：git reset --hard commit_id ，通过git log 查看提交历史，在 commit_id 之后的提交都会作废  git reset --hard 239afed0857cc2e77c17c01014077808619af64d
 提交回退的版本 (注：强制提交后，当前版本后面的提交版本将会删掉！，不使用强制提交会出错)：git push -f  或者 git push -f -u origin master
-
+```
 
 ### 六、git 分支删除
 ```
@@ -88,7 +88,7 @@ git reset --soft HEAD^ ：HEAD^的意思是上一个版本，也可以写成HEAD
 注意完成这个操作后，就恢复到了上一次的commit状态。
 ```
 
-### 八、撤销 commit
+### 八、删除新增文件
 ```
 git clean -n  显示将要删除的文件（注：但如果是新增的文件夹，则不会显示，包括这个文件夹下的文件也不会显示）
 git clean -f <path>  删除新增的文件，但不会删除新增的文件夹（包括这个文件下的文件）
