@@ -2,6 +2,8 @@ const fs = require('fs');
 const Koa = require('koa');
 const serve = require('koa-static');
 const Router = require('koa-router');
+const getTime = require('./util/util');
+const print = require('./util/print-log');
 const app = new Koa();
 const router = new Router();
  
@@ -14,10 +16,10 @@ router.get('api', '/api/blog/:name', (ctx, next) => {
   const filePath = `src/blog/${ctx.params.name}.md`;
   let markdownText = '';
   if (fs.existsSync(filePath)) {
-    console.log('文件读取');
+    print.info(`${getTime()} 文件读取`);
     markdownText = fs.readFileSync(filePath,'utf-8');
   } else {
-    console.log('文件不存在');
+    print.warn('${getTime()} 文件不存在');
   }
   ctx.body = markdownText;
 });
