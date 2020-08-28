@@ -22,10 +22,21 @@ router.get('api', '/api/blog/:name', (ctx, next) => {
   ctx.body = markdownText;
 });
 
-router.get('/404', ctx => {
-  ctx.body = '<h1>404...</h1>'
-});
-
 app.use(router.routes())  // 启动路由
+
+app.use(async (ctx, next)=>{
+  try {
+      // 执行后代的代码
+      await next();
+    if (!ctx.body) {
+        // 没有资源
+        ctx.status = 302
+        ctx.redirect('/bookmark.html');
+      }
+  }catch(e){
+      // 如果后面的代码报错 返回500
+      ctx.body = "500"
+  }
+})
 
 app.listen(3000);
