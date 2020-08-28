@@ -6,7 +6,7 @@ config.mode = "development"
 config.devtool = "cheap-module-eval-source-map"
 config.module.rules.push(
     {
-        test: /\.less$/,
+        test: /\.(less|css)$/,
         use: [
             'style-loader',
             'css-loader',

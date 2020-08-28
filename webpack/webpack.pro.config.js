@@ -6,7 +6,7 @@ config.mode = "production"
 config.devtool = "cheap-module-source-map"
 config.module.rules.push(
     {
-        test: /\.less$/,
+        test: /\.(less|css)$/,
         use: [
             {
                 loader: MiniCssExtractPlugin.loader,

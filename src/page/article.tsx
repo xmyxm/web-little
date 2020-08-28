@@ -5,6 +5,7 @@ import * as ReactDOM from 'react-dom';
 import Header from '@component/header';
 import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
+import 'github-markdown-css';
 import '../style/article.less';
 
 interface BlogProps {
@@ -27,7 +28,7 @@ class Index extends React.Component<BlogProps> {
     const { contentText } = this.state;
     return <React.Fragment>
       <Header title="博客"></Header>
-      <div className="article-page">
+      <div className="article-page markdown-body">
         {
           contentText ? <ReactMarkdown source={contentText} /> : <div>加载中</div>
         }
