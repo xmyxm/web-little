@@ -4,6 +4,7 @@ const bookmarkList = [
     list: [
       { name: 'git命令笔记', link: 'git_book' },
       { name: 'linux常用指令', link: 'linux_book' },
+      { name: 'linux端口占用查找', link: 'linux_port' },
       { name: 'git多账号配置方案', link: 'git_account' },
       { name: 'mac修改hosts命令', link: 'mac_hosts' },
       { name: '滚动穿透解决方案', link: 'scroll_book' },
