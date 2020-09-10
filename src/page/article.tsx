@@ -29,11 +29,17 @@ class Index extends React.Component<BlogProps> {
     const { contentText } = this.state;
     return <React.Fragment>
       <Header title="文章"></Header>
-      <div className="article-page markdown-body">
-        {
-          contentText ? <ReactMarkdown source={contentText} /> : <div>加载中</div>
-        }
-      </div>
+      {
+        contentText
+          ? <div className="article-page markdown-body">
+            <ReactMarkdown source={contentText} />
+          </div>
+          : <div className="load-box">
+            <div className="loading">
+              <div className="loader"></div>
+            </div>
+          </div>
+      }
     </React.Fragment>;
   }
 }
