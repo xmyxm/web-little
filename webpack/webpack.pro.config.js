@@ -27,12 +27,6 @@ config.module.rules.push(
                 options: {
                     name: "img/[name].[ext]"
                 }
-            },
-            {
-                loader: 'image-webpack-loader',
-                options: {
-                    disable: false
-                }
             }
         ]
     }
