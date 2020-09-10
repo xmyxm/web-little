@@ -37,6 +37,7 @@ module.exports = {
     plugins: [
         "@typescript-eslint",
         "react",
+        "html",
         "markdown" // eslint-plugin-markdown 可以检查 Markdown、 HTML以及其它语言文件中的代码
     ],
     // 开启规则和发生错误时报告的等级
