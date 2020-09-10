@@ -33,7 +33,7 @@ app.use(async (ctx, next)=>{
     if (!ctx.body) {
         // 没有资源
         ctx.status = 302
-        ctx.redirect('/bookmark.html');
+        ctx.redirect('/index.html');
       }
   }catch(e){
       // 如果后面的代码报错 返回500
