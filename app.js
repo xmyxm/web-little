@@ -9,6 +9,7 @@ const router = new Router();
  
 // or use absolute paths
 app.use(serve(__dirname + '/dist/', {
+  gzip: true,
 	maxage: 3000,
 }));
  
