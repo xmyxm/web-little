@@ -3,6 +3,9 @@ const webpack = require('webpack');
 const open = require('open');
 const portIsOccupied = require('./portIsOccupied');
 const config = require('../webpack/webpack.beta.config');
+const print = require('./print-log');
+const execSync = require('child_process').execSync
+const getTime = require('./util');
 
 // 启动函数
 function run() {
@@ -31,7 +34,10 @@ function run() {
       });
     });
   } else {
-    serverHost = 80;
+    print.info(`${getTime()} 开始打包`);
+    execSync('npm run build')
+    print.info(`${getTime()} 打包完成`);
+    serverHost = 4000;
   }
   return serverHost;
 }

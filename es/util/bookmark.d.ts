@@ -3,6 +3,7 @@ declare const bookmarkList: {
     list: {
         name: string;
         link: string;
+        icon: string;
     }[];
 }[];
 export default bookmarkList;

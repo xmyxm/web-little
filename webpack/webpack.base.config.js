@@ -66,7 +66,7 @@ module.exports = {
     },
   },
   plugins: [
-    // new BuildDonePlugin(),
+    new BuildDonePlugin({text: '编译完成'}),
     new webpack.BannerPlugin('@web-little'),
     new HtmlWebpackPlugin({
       template: './src/html/index.html',
