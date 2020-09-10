@@ -17,7 +17,12 @@ class Index extends React.Component {
         bookmarkList.map((categoryData) => <div key={categoryData.name} className="category-box">
           <div className="category_name">{categoryData.name}</div>
           {
-            categoryData.list.map((item) => <a className="bookmark-name" key={item.name} rel="noopener noreferrer" target="_blank" href={item.link}><i className="bookmark-icon"></i> {item.name}</a>)
+            categoryData.list.map((item) => <a className="bookmark-name" key={item.name} rel="noopener noreferrer" target="_blank" href={item.link}>
+              {
+                item.icon && <img className="bookmark-icon" src={item.icon} />
+              }
+              {item.name}
+            </a>)
           }
         </div>)
       }

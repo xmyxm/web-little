@@ -7,11 +7,20 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "启动程序",
+      "name": "调试程序",
       "skipFiles": [
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/dev.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "启动程序",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/app.js"
     }
   ]
 }

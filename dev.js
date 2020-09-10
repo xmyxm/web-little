@@ -20,6 +20,6 @@ portIsOccupied(port).then((newPort) => {
       console.log(`启动出错：${err}`);
     }
     // c.exec(`start http://localhost:${newPort}`)
-    open(`http://${host}:${port}/index.html`);
+    open(`http://${host}:${port}/bookmark.html`);
   });
 });
