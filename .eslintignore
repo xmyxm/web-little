@@ -4,3 +4,4 @@ postcss-sprites.config.js
 postcss.config.js
 webpack/
 lib/
+util/

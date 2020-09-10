@@ -11,7 +11,8 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/dev.js"
+      "program": "${workspaceFolder}/app.js",
+      "args": ["dev-server"],
     },
     {
       "type": "node",

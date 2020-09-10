@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 const net = require('net');
 
 function portIsOccupied(port) {

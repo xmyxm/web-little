@@ -1,5 +1,6 @@
-const config = require('./webpack.base.config.js')
 const path = require('path');
+const webpack = require('webpack');
+const config = require('./webpack.base.config.js')
 const packageFilePath = path.join(__dirname, '../dist')
 
 config.mode = "development"
@@ -42,5 +43,10 @@ config.devServer = {
     // open: true, // 开发服务器将打开浏览器
     // openPage: 'index.html', // 指定打开浏览器时要浏览的页面。
 }
+
+// 在热加载时直接返回更新文件名，而不是文件的id。
+config.plugins.push(new webpack.NamedModulesPlugin());
+// 开发环境热更新配置
+config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
 module.exports = config;
