@@ -10,7 +10,7 @@ const getTime = require('./util');
 // 启动函数
 function run() {
   const argv = process.argv;
-  let serverHost = 4000;
+  let serverHost = 80;
   if (argv.length === 3 && argv[2] === 'dev-server') {
     const { port, host } = config.devServer;
     // 增加代理配置
@@ -37,7 +37,7 @@ function run() {
     print.info(`${getTime()} 开始打包`);
     execSync('npm run build')
     print.info(`${getTime()} 打包完成`);
-    serverHost = 4000;
+    serverHost = 80;
   }
   return serverHost;
 }
