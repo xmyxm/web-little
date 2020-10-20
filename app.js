@@ -8,8 +8,6 @@ const runDev = require('./util/run-dev');
 const app = new Koa();
 const router = new Router();
 
-// 调试启动
-const serverHost = runDev();
 // 静态资源服务器
 app.use(static);
 // 文章内容解析服务
@@ -18,5 +16,8 @@ router.get('api', '/api/blog/:name', content);
 app.use(router.routes())
 // 重定向路由
 app.use(redirect)
-// 启动监听端口
-app.listen(serverHost);
+// 调试启动
+runDev().then(serverPort => { 
+  // 启动监听端口
+  app.listen(serverPort);
+})

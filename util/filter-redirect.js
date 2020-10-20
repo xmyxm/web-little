@@ -3,7 +3,7 @@ async function redirect(ctx, next) {
   try {
     // 执行后代的代码
     await next();
-    if (!ctx.body) {
+    if (!ctx.body && !ctx.req.complete) {
       // 没有资源
       ctx.status = 302
       ctx.redirect('/index.html');
